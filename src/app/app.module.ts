@@ -40,7 +40,7 @@ registerLocaleData(localeDe);
     FormsModule,
     LayoutModule,
     FileSaverModule,
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbThemeModule.forRoot(),
     NbDateFnsDateModule.forRoot({ format: 'MM/dd/yyyy' }),
     NbDatepickerModule.forRoot(),
     NbLayoutModule,
