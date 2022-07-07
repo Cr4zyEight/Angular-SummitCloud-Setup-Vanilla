@@ -24,6 +24,7 @@ import {
   NbDatepickerModule,
   NbChatModule,
   NbToastrModule,
+  NbTreeGridModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -57,6 +58,7 @@ registerLocaleData(localeDe);
     FontAwesomeModule,
     NbPopoverModule,
     NbToastrModule.forRoot(),
+    NbTreeGridModule,
   ],
   schemas: [],
   declarations: [AppComponent],
