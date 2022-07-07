@@ -1,4 +1,4 @@
-@import '../../themes';
+@import '../../themes.scss';
 
 @import '~@nebular/theme/styles/globals';
 
@@ -6,15 +6,15 @@
   @include nb-theme-global();
 }
 
-@import 'variable'; // sollte weg
-@import 'app';
-@import 'pages'; // sollte weg
-@import 'sidebar'; // sollte weg
+@import 'variable.scss'; // sollte weg
+@import 'app.scss';
+@import 'pages.scss'; // sollte weg
+@import 'sidebar.scss'; // sollte weg
 
-@import 'responsive'; // sollte weg
+@import 'responsive.scss'; // sollte weg
 @import 'animate.css'; // ?
 @import 'theme-settings.scss'; // sollte weg
-@import 'blue'; // sollte weg
+@import 'blue.scss'; // sollte weg
 
 @import '~@fortawesome/fontawesome-free/css/all.css'; // notwendig 18.05.2020
 @import 'tinymce.css';
