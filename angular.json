@@ -79,7 +79,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": ["styles.css"],
+            "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "node_modules/@nebular/theme/styles/prebuilt/dark.css",
+              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css",
+              "node_modules/@nebular/theme/styles/prebuilt/corporate.css",
+              "src/styles.scss"
+            ],
             "scripts": [],
             "assets": ["src/favicon.ico", "src/assets"]
           }
