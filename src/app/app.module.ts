@@ -42,7 +42,7 @@ registerLocaleData(localeDe);
     FormsModule,
     LayoutModule,
     FileSaverModule,
-    NbThemeModule.forRoot({ name: 'gdpr' }),
+    NbThemeModule.forRoot({ name: 'default' }),
     NbDateFnsDateModule.forRoot({ format: 'MM/dd/yyyy' }),
     NbDatepickerModule.forRoot(),
     NbLayoutModule,
