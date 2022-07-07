@@ -1,9 +1,9 @@
 @import 'node_modules/@nebular/theme/styles/theming';
 @import '@nebular/theme/styles/themes/default';
 
-@import './common-styles/card';
-@import './common-styles/input';
-@import './common-styles/container';
+@import './common-styles/_card.scss';
+@import './common-styles/_input.scss';
+@import './common-styles/_container.scss';
 
 @include card-commons;
 @include input-commons;
