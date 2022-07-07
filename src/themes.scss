@@ -1,0 +1,597 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+
+@import './common-styles/card';
+@import './common-styles/input';
+@import './common-styles/container';
+
+@include card-commons;
+@include input-commons;
+@include container-commons;
+
+html,
+body {
+  font-size: 16px !important;
+}
+/*
+* Nebular components
+*/
+
+// nb-menu color settings to devide sidbar-menu with avatar-menu and dropdown-menu
+app-sidebar > nb-menu > ul > li > a > span {
+  color: var(--white) !important;
+  font-weight: 600 !important;
+  font-size: 0.94rem !important;
+}
+nb-context-menu > nb-menu > ul > li > a {
+  &:hover {
+    background-color: var(--darkBlue) !important;
+    > nb-icon {
+      color: var(--lightBlue) !important;
+    }
+  }
+  > nb-icon {
+    color: var(--darkBlue) !important;
+  }
+  span {
+    text-align: left;
+  }
+}
+
+nb-spinner {
+  z-index: 2 !important;
+}
+
+// Dropdown menu as nb-select
+.dropdown-240 {
+  width: 240px;
+  height: 48px;
+}
+
+ng-autonumeric input {
+  border-color: var(--lightBlue);
+  border-width: var(--input-border-width);
+  border-radius: var(--input-rectangle-border-radius);
+  height: 40px;
+}
+
+// Root app definitions
+:root {
+  --white: #ffffff;
+  --slightlyDark: #fafdff;
+  --lightGray: #edeff3;
+  --lightBlue: #5eaad9;
+  --britgherLightBlue: #a5c8fd;
+  --treeRows: #f2f5fac9; // selected / sonst
+  --treeRowsSelected: #dbe1ebc9; // selected / sonst
+  --darkBlue: #2c2459;
+  --brighterDarkBlue: #174982;
+  --error: #ff0000;
+  --warning: #af7500;
+  --selectOption: #274bdb;
+  --transparent: #00000000;
+  --tree_highlight: #e7ecf7bb; // hover
+  --tree_border: #5eaad9b4;
+  --dialog_header: #e8e8e8;
+  --spinner: rgba(179, 186, 201, 0.644);
+  --placeholder: #929292;
+  --basicText: #222b45;
+  --dangerBtn: #ff3d57;
+  --dangerBtnAlt: #fd5a70;
+  --darkRed: #c20034;
+
+  // Icon tree
+  --icon_blue: #3366ff;
+  --icon_lightBlue: #4ea9e2;
+  --icon_green: #00d68f;
+  --icon_yellow: #ffee00;
+  --icon_orange: #ffaa00;
+  --icon_red: #ff3d71;
+  --icon_darkRed: #c20034;
+  --icon_gray: #0a466d;
+  --icon_error: #ff0000;
+}
+
+// Nebular definitions
+$nb-themes: nb-register-theme(
+  (
+    // Theme colors if no theme-setting available
+    // among others used in dropdown (select)
+    color-primary-600: var(--darkBlue),
+    color-primary-500: var(--darkBlue),
+    color-primary-400: var(--darkBlue),
+    // Fonts
+    text-subtitle-2-font-family: ('Lato', 'Open Sans', 'sans-serif'),
+    text-subtitle-2-font-weight: 400,
+    text-paragraph-font-family: ('Lato', 'Open Sans', 'sans-serif'),
+    text-subtitle-font-family: ('Lato', 'Open Sans', 'sans-serif'),
+    select-medium-text-font-size: 0.94rem,
+    select-medium-placeholder-text-font-size: 0.94rem,
+    button-text-font-family: ('Lato', 'Open Sans', 'sans-serif'),
+    tree-grid-header-text-font-family: ('Lato', 'Open Sans', 'sans-serif'),
+    // Avatar-Fonts
+    user-medium-name-text-font-size: 1rem,
+    user-medium-title-text-font-size: 0.8rem,
+    // Layout
+    layout-background-color: var(--slightlyDark),
+    // Card
+    card-border-color: var(--lightBlue),
+    card-divider-color: var(--lightBlue),
+    // Input Field
+    input-medium-max-width: 30rem,
+    input-basic-border-color: var(--lightBlue),
+    input-basic-focus-border-color: var(--lightBlue),
+    input-basic-hover-border-color: var(--lightBlue),
+    input-basic-background-color: var(--white),
+    input-basic-placeholder-text-color: var(--brighterDarkBlue),
+    input-large-placeholder-text-font-weight: text-subtitle-font-weight,
+    input-basic-disabled-text-color: var(--basicText),
+    // Button
+    button-filled-basic-text-color: var(--slightlyDark),
+    button-filled-basic-focus-background-color: var(--darkBlue),
+    button-filled-basic-hover-background-color: var(--darkBlue),
+    button-filled-basic-background-color: var(--darkBlue),
+    button-filled-basic-active-background-color: var(--darkBlue),
+    button-filled-text-transform: none,
+    button-filled-danger-background-color: var(--dangerBtn),
+    button-filled-danger-border-color: var(--dangerBtn),
+    button-filled-danger-focus-background-color: var(--dangerBtn),
+    button-filled-danger-focus-border-color: var(--dangerBtn),
+    button-filled-danger-hover-background-color: var(--dangerBtnAlt),
+    button-filled-danger-hover-border-color: var(--dangerBtnAlt),
+    button-filled-danger-active-background-color: var(--dangerBtnAlt),
+    button-filled-danger-active-border-color: var(--dangerBtnAlt),
+    button-outline-basic-text-color: var(--basicText),
+    button-outline-basic-focus-background-color: var(--white),
+    button-outline-basic-hover-background-color: var(--white),
+    button-outline-basic-hover-text-color: var(--darkBlue),
+    button-outline-basic-background-color: var(--white),
+    button-outline-basic-active-background-color: var(--white),
+    button-outline-basic-border-color: var(--darkBlue),
+    button-outline-basic-hover-border-color: var(--darkBlue),
+    button-outline-text-transform: none,
+    // Menu
+    menu-item-active-background-color: var(--darkBlue),
+    //
+    menu-item-hover-background-color: var(--darkBlue),
+    menu-item-divider-color: 0 0 0 0 #00000000,
+    menu-item-icon-hover-color: var(--lightBlue),
+    menu-item-icon-active-color: var(--lightBlue),
+    menu-item-icon-color: var(--white),
+    menu-item-hover-text-color: var(--white),
+    menu-item-active-text-color: var(--white),
+    menu-item-padding: 0.75rem 3rem 0.75rem 2.25rem,
+    menu-item-icon-margin: 0.11rem 1rem 0.11rem 0,
+    menu-text-font-size: 1rem,
+    // Icon
+    icon-basic-color: var(--icon_gray),
+    icon-font-size: 1.2rem,
+    // Checkbox
+    checkbox-text-font-size: 1rem,
+    // Footer
+    footer-divider-color: var(--slightlyDark),
+    footer-shadow: 0 0 0 0 #00000000,
+    footer-background-color: var(--slightlyDark),
+    // Sidebar
+    sidebar-background-color: var(--lightBlue),
+    sidebar-shadow: 0 0 0 0 #00000000,
+    sidebar-width: 14rem,
+    sidebar-menu-item-highlight-color: var(--darkBlue),
+    // Header
+    header-background-color: var(--white),
+    header-shadow: 0 0 1px 1px var(--lightBlue),
+    header-height: 4rem,
+    header-text-color: var(--brighterDarkBlue),
+    header-text-font-size: 1.1rem,
+    header-text-font-weight: 600,
+    // Select
+    select-filled-basic-placeholder-text-color: var(--brighterDarkBlue),
+    select-filled-basic-text-color: var(--basicText),
+    select-filled-basic-background-color: var(--white),
+    select-filled-basic-border-color: var(--lightBlue),
+    select-filled-basic-hover-background-color: var(--white),
+    select-filled-basic-focus-border-color: var(--lightBlue),
+    select-filled-basic-focus-background-color: var(--white),
+    select-filled-basic-hover-border-color: var(--lightBlue),
+    select-medium-placeholder-text-font-weight: text-subtitle-font-weight,
+    select-min-width: auto,
+    select-medium-max-width: 30rem,
+    // Tree
+    tree-grid-cell-border-color: var(--lightBlue),
+    //HIER
+    tree-grid-cell-padding: 0.1rem 1.1rem,
+    tree-grid-row-min-height: 1.7rem,
+    tree-grid-header-background-color: var(--white),
+    tree-grid-row-background-color: var(--white),
+    tree-grid-row-even-background-color: var(--white),
+    tree-grid-header-text-color: var(--brighterDarkBlue),
+    tree-grid-footer-text-color: var(--brighterDarkBlue),
+    tree-grid-row-text-color: var(--brighterDarkBlue),
+    // Spinner
+    spinner-basic-background-color: var(--spinner),
+    // Accordion
+    accordion-shadow: 0 0 0 1px var(--lightBlue),
+    accordion-header-border-color: var(--lightBlue),
+    accordion-border-radius: 0,
+    // Toggle
+    toggle-outline-color: none,
+    toggle-basic-focus-background-color: none,
+    toggle-basic-active-checked-border-color: none,
+    // Button Group
+    button-group-filled-button-basic-text-color: var(--brighterDarkBlue),
+    button-group-filled-basic-divider-color: transparent
+  ),
+  default,
+  default
+);
+
+/*
+* Global styles
+*/
+
+hr {
+  border-color: var(--lightBlue) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.no-scroll-x {
+  overflow-x: hidden;
+}
+.restricted-color {
+  opacity: 0.5 !important;
+}
+
+// Icon-Colors
+.icon-blue {
+  color: var(--icon_blue) !important;
+}
+.icon-lightBlue {
+  color: var(--icon_lightBlue) !important;
+}
+.icon-green {
+  color: var(--icon_green) !important;
+}
+.icon-orange {
+  color: var(--icon_orange) !important;
+}
+.icon-red {
+  color: var(--icon_red) !important;
+}
+.icon-darkRed {
+  color: var(--icon_darkRed) !important;
+}
+.icon-gray {
+  color: var(--icon_gray) !important;
+}
+.icon-yellow {
+  color: var(--icon_yellow) !important;
+}
+.icon-error {
+  color: var(--icon_error) !important;
+}
+
+// Administration view tree settings (user, layout, Dataset, ...)
+.header-tree-admin {
+  height: 60px;
+  padding-top: 8px !important;
+  padding-left: 40px !important;
+}
+.border-bottom-tree-admin {
+  border-width: 0 0 1px 0 !important;
+}
+.status-tree-admin-8 {
+  width: 8rem !important;
+}
+.status-tree-admin-6 {
+  width: 6rem !important;
+}
+.status-tree-admin-4 {
+  width: 4rem !important;
+}
+.status-tree-admin-3 {
+  width: 3rem !important;
+}
+.status-tree-admin-2 {
+  width: 2rem !important;
+}
+.hover-column-tree-admin:hover {
+  background-color: var(--treeRows) !important;
+}
+.padding-header-tree-admin {
+  padding-top: 18px !important;
+  padding-bottom: 17px !important;
+}
+.padding-row-tree-admin {
+  padding-top: 20px !important;
+  padding-bottom: 19px !important;
+}
+.placeholder-tree-admin {
+  width: 30px !important;
+}
+.reset-tree-admin {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 36px;
+}
+.cursor-tree-admin {
+  cursor: pointer;
+}
+.search-input-tree-admin {
+  transform: translate(15%, 5%);
+}
+.select-tree-admin {
+  transform: translate(0%, 5%);
+}
+.tree-row-height {
+  height: 30px !important;
+}
+
+// Angular <textarea>
+textarea {
+  border-color: var(--lightBlue);
+  border-radius: 5px;
+  height: 120px;
+  resize: none !important;
+  font-family: ('Lato', 'Open Sans', 'sans-serif');
+  font-size: 0.9375rem !important;
+  font-weight: 600;
+  padding: 10px 10px 5px 15px !important;
+}
+
+// Dialog text
+.span-text {
+  font-family: ('Lato', 'Open Sans', 'sans-serif');
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+.span-text-big {
+  font-family: ('Lato', 'Open Sans', 'sans-serif');
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.line-break {
+  word-wrap: break-word !important;
+}
+.padding-top {
+  padding-top: 6px;
+}
+.f-r {
+  float: right;
+}
+.f-l {
+  float: left;
+}
+.padding-bot {
+  padding-bottom: 20px;
+}
+.span-padding {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+// Dialogs
+.dialog-header {
+  border: none !important;
+  display: flex;
+  height: 3.5rem;
+  padding: 0 0 0 1.5rem !important;
+  background-color: var(--spinner);
+  justify-content: space-between;
+}
+.create-header-color {
+  border-color: var(--spinner);
+  background-color: var(--spinner);
+}
+.dialog-close-button {
+  height: 100%;
+  border-radius: 0 !important;
+  border-color: var(--brighterDarkBlue) !important;
+  width: 3.5rem;
+}
+.reset-padding {
+  padding: 1.25rem 0 1px 0 !important;
+}
+.width-half {
+  width: 14.0625rem;
+}
+.width {
+  width: 450px;
+  margin: 5px 25px 5px 25px;
+  padding: 0;
+}
+.align-right {
+  transform: translate(250px, 0);
+}
+.pos-right {
+  transform: translate(25px, 0);
+  width: 450px;
+}
+.icon-size {
+  font-size: 1.2rem !important;
+}
+.icon-size-0-5 {
+  font-size: 0.5rem !important;
+}
+.icon-size-0-7 {
+  font-size: 0.7rem !important;
+}
+.icon-size-1 {
+  font-size: 1rem !important;
+}
+.icon-size-2 {
+  font-size: 2rem !important;
+}
+.icon-size-3 {
+  font-size: 3rem !important;
+}
+
+// neu
+.hover-column:hover {
+  background-color: var(--tree_highlight) !important;
+}
+.bg-blue {
+  background-color: var(--treeRows) !important;
+}
+.bg-selected {
+  background-color: var(--treeRowsSelected) !important;
+}
+
+// Font
+h4 {
+  font-size: 1.2rem !important;
+  color: var(--darkBlue) !important;
+}
+.font-heading {
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+.font-sub-heading {
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stick-right {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+.error-text-no-pad {
+  color: var(--error);
+}
+.error-text {
+  color: var(--error);
+  padding-left: 30px;
+}
+.warning-text {
+  color: var(--warning);
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.disabled-but-clickable {
+  opacity: 0.4;
+}
+.line-break {
+  word-wrap: break-word; /* All browsers since IE 5.5+ */
+  overflow-wrap: break-word; /* Renamed property in CSS3 draft spec */
+  width: 30%;
+}
+.dialog-extra-small {
+  min-width: 400px !important;
+  max-width: 400px !important;
+}
+.dialog-small {
+  width: 500px !important;
+  max-width: 500px !important;
+}
+.dialog-large {
+  width: 50vw !important; // vw - Viewport Width - Breite des Bildschirms (50vw = 50% von der Bildschirm Breite)
+  max-width: 50vw !important;
+  max-height: 50vh !important; // vh - Viewport Height - Höhe des Bildschirms (50vw = 50% von der Bildschirm Höhe)
+}
+.bg-blue {
+  background-color: var(--treeRows) !important;
+}
+.bg-selected {
+  background-color: var(--treeRowsSelected) !important;
+}
+.padding-0 {
+  padding: 0;
+}
+
+// Font
+
+.flex-grid {
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.light-button {
+  border-color: var(--brighterDarkBlue) !important;
+  background-color: var(--white) !important;
+  color: var(--brighterDarkBlue) !important;
+}
+
+.badge-darkBlue {
+  background-color: var(--darkBlue) !important;
+  color: var(--slightlyDark) !important;
+}
+
+//Paragraph
+label {
+  color: var(--brighterDarkBlue) !important;
+  margin: 0 !important;
+}
+
+//Scrollbar Style
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  overflow-y: scroll;
+  background: var(--lightGray);
+  box-shadow: inset 0 0 6px var(--lightGray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--darkBlue);
+  border-radius: 10px;
+}
+
+// Zum zentrieren des zugewiesenen Benutzer Bildes damit das popup auch zentriert darüber "aufpoppt"
+// Da das div wo das Bild drin liegt 38px breit ist und das Bild selbst 24px ergibt sich ein left margin von (38-24)/2 = 7px
+// Ist zwar etwas hacky aber mit justify klappt es scheinbar nicht -.-
+.assignedUserColumn {
+  margin-left: 7px !important;
+}
+
+.max-height-10-percent-screen-height {
+  max-height: 10vh;
+}
+.max-height-20-percent-screen-height {
+  max-height: 20vh;
+}
+.max-height-25-percent-screen-height {
+  max-height: 25vh;
+}
+.max-height-30-percent-screen-height {
+  max-height: 30vh;
+}
+.max-height-40-percent-screen-height {
+  max-height: 40vh;
+}
+.max-height-50-percent-screen-height {
+  max-height: 50vh;
+}
+.max-height-60-percent-screen-height {
+  max-height: 60vh;
+}
+.max-height-70-percent-screen-height {
+  max-height: 70vh;
+}
+.max-height-75-percent-screen-height {
+  max-height: 75vh;
+}
+.max-height-80-percent-screen-height {
+  max-height: 80vh;
+}
+.max-height-90-percent-screen-height {
+  max-height: 90vh;
+}
+.max-height-100-percent-screen-height {
+  max-height: 100vh;
+}
+
+// Make all table headers stick to the top when scrolling so they wont disappear
+th {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: var(--white) !important;
+  z-index: 1; // Wenn nicht gesetzt dann laufen die Profilbilder im tree über den table header rüber
+}
