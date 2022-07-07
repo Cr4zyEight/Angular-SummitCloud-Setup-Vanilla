@@ -22,34 +22,17 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "styles": ["src/assets/scss/style.scss"],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/tinymce/tinymce.min.js"
             ],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "node_modules/tinymce/skins",
-                "output": "/skins/"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/tinymce/themes",
-                "output": "/themes/"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/tinymce/plugins",
-                "output": "/plugins/"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/ngx-extended-pdf-viewer/assets/",
-                "output": "/assets/"
-              }
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "node_modules/@nebular/theme/styles/prebuilt/dark.css",
+              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css",
+              "node_modules/@nebular/theme/styles/prebuilt/corporate.css",
+              "src/styles.scss"
             ]
           },
           "configurations": {
