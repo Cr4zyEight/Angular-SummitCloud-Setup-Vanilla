@@ -1,0 +1,11 @@
+/* Add application styles & imports to this file! */
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+
+@import './common-styles/card';
+@import './common-styles/input';
+@import './common-styles/container';
+
+@include card-commons;
+@include input-commons;
+@include container-commons;
