@@ -1,4 +1,62 @@
 /* Add application styles & imports to this file! */
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+
+@import 'variable'; // sollte weg
+@import 'app';
+@import 'pages'; // sollte weg
+@import 'sidebar'; // sollte weg
+
+@import 'responsive'; // sollte weg
+@import 'animate.css'; // ?
+@import 'theme-settings.scss'; // sollte weg
+@import 'blue'; // sollte weg
+
+@import '~@fortawesome/fontawesome-free/css/all.css'; // notwendig 18.05.2020
+@import 'tinymce.css';
+
+// bootstap modal size for nebular dashboard tree view
+.modal-xl {
+  max-width: 761px;
+}
+
+// sollte weg, alle
+.hover-red:hover {
+  color: rgb(239, 83, 80);
+}
+
+.hover-blue:hover {
+  color: rgb(25, 152, 210);
+}
+
+.hover-green:hover {
+  color: rgb(25, 210, 81);
+}
+
+.hover-pointer:hover {
+  cursor: pointer;
+}
+
+.noselect {
+  user-select: none;
+}
+
+.template-selected {
+  background-color: #2386b1;
+  opacity: 0.7;
+}
+
+.modal-xxl .modal-lg {
+  max-width: 90%;
+}
+
+.popover {
+  max-width: 100%;
+}
+
 @import '~@nebular/theme/styles/theming';
 @import '~@nebular/theme/styles/themes/default';
 
