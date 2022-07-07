@@ -29,12 +29,14 @@ import {
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NbDateFnsDateModule } from '@nebular/date-fns';
+import { AppRoutingModule } from './app-routing.module';
 
 registerLocaleData(localeDe);
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
